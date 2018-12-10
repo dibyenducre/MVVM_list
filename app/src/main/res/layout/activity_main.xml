@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.app.mvvmtestlist.modelview.UserModelView"/>
+        <variable
+            name="click"
+            type="com.app.mvvmtestlist.command.ButtonClickEvent"/>
+
+    </data>
+
+<LinearLayout
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:text="@={user.username}"
+        android:id="@+id/ed_username"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+
+    <EditText
+        android:text="@={user.password}"
+        android:layout_marginTop="20dp"
+        android:id="@+id/ed_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <Button
+        android:onClick="@{(v)->click.onCkickButton()}"
+        android:layout_marginTop="20dp"
+        android:text="CLICK"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+
+
+</LinearLayout>
+</layout>
